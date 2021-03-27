@@ -13,8 +13,8 @@ class RideScreen extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.deepPurple,
-        title: Text('Ride'),
+        backgroundColor: Colors.white70,
+        title: Text('Ride', style: TextStyle(fontSize: 23, fontWeight: FontWeight.w200, color: Colors.black)),
       ),
       body: Container(
         child: Column(
@@ -47,10 +47,10 @@ class _MyRideStartStop extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Center(child: Text("Covered distance:", style: TextStyle(fontSize: 18),)),
+                          Center(child: Text("Covered distance:", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w300),)),
                           Text(ride.testRide.distance.toStringAsPrecision(3),
-                            style: TextStyle(fontSize: 24),),
-                          Text("meters", style: TextStyle(fontSize: 20),),
+                            style: TextStyle(fontSize: 24, fontWeight: FontWeight.w300),),
+                          Text("meters", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w300),),
                         ],)
                     )
                       )),
@@ -60,19 +60,25 @@ class _MyRideStartStop extends StatelessWidget {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Center(child: Text("Average Speed:", style: TextStyle(fontSize: 18),)),
+                              Center(child: Text("Average Speed:", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w300),)),
                               Text(ride.averageSpeedInKmPerHour(ride.testRide.averageSpeed),
-                                style: TextStyle(fontSize: 24),),
-                              Text("km/h", style: TextStyle(fontSize: 20),),
+                                style: TextStyle(fontSize: 24, fontWeight: FontWeight.w300),),
+                              Text("km/h", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w300),),
                             ],)
                       )
                   )),
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 0.0, top: 80.0, right: 0.0, bottom:0),
-                  child: Text(ride.transformMilliSeconds(ride.stopwatch.elapsedMilliseconds),
-                    style: TextStyle(fontSize: 24),),
+                padding: const EdgeInsets.only(left: 0.0, top: 75.0, right: 0.0, bottom:0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Riding time:", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w300),),
+                    Text(ride.transformMilliSeconds(ride.stopwatch.elapsedMilliseconds),
+                      style: TextStyle(fontSize: 28, fontWeight: FontWeight.w300),),
+                  ],
+                )
               ),
               Expanded(child:Row(
                 children: [
@@ -86,11 +92,11 @@ class _MyRideStartStop extends StatelessWidget {
                           print(ride.testRide.distance);
 
                         },
-                        child: Icon(CupertinoIcons.play_arrow, size: 50)
+                        child: Icon(Icons.play_arrow, size: 50, color: Colors.black54, )
                       ),
                       Padding(
                         padding: const EdgeInsets.all(10.0),
-                        child: Text("Start ride", style: TextStyle(fontSize: 18),),
+                        child: Text("Start ride", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),),
                       ),],
                   ), flex: 1,),
                   Expanded(child: Column(
@@ -106,11 +112,11 @@ class _MyRideStartStop extends StatelessWidget {
                             ride.positionStream.cancel();
                             print(ride.testRide.averageSpeed);
                           },
-                          child: Icon(CupertinoIcons.stop, size: 50,)
+                          child: Icon(Icons.stop, size: 50, color: Colors.black54,)
                       ),
                     Padding(
                       padding: const EdgeInsets.all(10.0),
-                      child: Text("Stop ride", style: TextStyle(fontSize: 18),),
+                      child: Text("Stop ride", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),),
                     ),],
                   ), flex: 1,),
                   Expanded(child: Column(
@@ -120,11 +126,11 @@ class _MyRideStartStop extends StatelessWidget {
                           onPressed:(){
                             ride.cleanRoute();
                           },
-                          child: Icon(CupertinoIcons.clear, size: 50,)
+                          child: Icon(Icons.clear, size: 50, color: Colors.black54,)
                       ),
                       Padding(
                         padding: const EdgeInsets.all(10.0),
-                        child: Text("Clear ride", style: TextStyle(fontSize: 18),),
+                        child: Text("Clear ride", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),),
                       ),],
                   ), flex: 1,)
                 ],

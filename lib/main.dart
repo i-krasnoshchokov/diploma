@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import 'RideModel.dart';
 import 'RideScreen.dart';
+import 'FirstView.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,9 +19,10 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Provider Demo',
-        initialRoute: '/rides',
+        initialRoute: '/firstpage',
         routes: {
           '/rides': (context) => RideScreen(),
+          '/firstpage': (context) => FirstView(),
           //'/addContact': (context) => AddContact(),
         },
       ),
