@@ -1,9 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'dart:ui';
 import 'dart:async';
 
+import 'ProviderWidget.dart';
 import 'RideModel.dart';
 
 
@@ -13,8 +15,8 @@ class RideScreen extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white70,
-        title: Text('Ride', style: TextStyle(fontSize: 23, fontWeight: FontWeight.w200, color: Colors.black)),
+        backgroundColor: Colors.white38,
+        title: Text('ride', style: TextStyle(fontSize: 25, fontWeight: FontWeight.w200, color: Colors.black)),
       ),
       body: Container(
         child: Column(
@@ -34,6 +36,8 @@ class RideScreen extends StatelessWidget{
 }
 
 class _MyRideStartStop extends StatelessWidget {
+  final db = Firestore.instance;
+
   @override
   Widget build(BuildContext context) {
     var ride = context.watch<RideModel>();
@@ -103,14 +107,17 @@ class _MyRideStartStop extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       TextButton(
-                          onPressed:(){
+                          onPressed:() async {
+                            final uid = await  MyProvider.of(context).auth.getUserID();
                             ride.isRideOn = false;
                             ride.countDistance();
                             ride.countAverageSpeed();
+                            ride.testRide.time = ride.transformMilliSeconds(ride.stopwatch.elapsedMilliseconds);
                             ride.stopwatch.stop();
-                            ride.saveRide();
+                            //ride.saveRide();
                             ride.positionStream.cancel();
                             print(ride.testRide.averageSpeed);
+                            await db.collection("userData").document(uid).collection("rides").add(ride.toJson());
                           },
                           child: Icon(Icons.stop, size: 50, color: Colors.black54,)
                       ),

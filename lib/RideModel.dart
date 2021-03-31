@@ -1,7 +1,13 @@
 import 'dart:async';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:geolocator/geolocator.dart';
+import 'AuthService.dart';
+import 'package:course_work_2/ProviderWidget.dart';
 
 class Ride{
   final int id;
@@ -68,7 +74,7 @@ class RideModel extends ChangeNotifier {
     testRide.averageSpeed = testRide.distance / (stopwatch.elapsedMilliseconds / 1000);
     notifyListeners();
   }
-  void saveRide(){
+  void saveRide() async{
     rides.add(Ride(rides.length + 1, testRide.distance, transformMilliSeconds(stopwatch.elapsedMilliseconds)));
   }
 
@@ -76,7 +82,18 @@ class RideModel extends ChangeNotifier {
     return ((speed * 36)/10).toStringAsPrecision(3);
   }
 
+  String rideDateTime(){
+    DateTime dateTime = DateTime.now();
+    print(dateTime.toString());
+    return dateTime.toString().substring(0, dateTime.toString().indexOf('.'));
+  }
 
+  Map<String, dynamic> toJson() => {
+    'distance': testRide.distance.toStringAsPrecision(3),
+    'time': testRide.time,
+    'averageSpeed': averageSpeedInKmPerHour(testRide.averageSpeed),
+    'datetime': rideDateTime(),
+  };
 }
 
 

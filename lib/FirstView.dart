@@ -51,6 +51,7 @@ class _StartPage extends StatelessWidget {
                     child: TextButton(
                       child: Text("Sign in", style: TextStyle(fontSize: 27,
                           fontWeight: FontWeight.w200, color: Colors.black),),
+                      onPressed: () => Navigator.pushNamed(context, '/signIn'),
                     ),
                   ),
                 )
@@ -61,11 +62,12 @@ class _StartPage extends StatelessWidget {
           children: [
             Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.only(left: 0.0, top: 10.0, right: 0.0, bottom:0),
                   child: Center(
                     child: TextButton(
                       child: Text("Register", style: TextStyle(fontSize: 27,
                           fontWeight: FontWeight.w200, color: Colors.black),),
+                      onPressed: () => Navigator.pushNamed(context, '/signUp'),
                     ),
                   ),
                 )
