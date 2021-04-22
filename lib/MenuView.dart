@@ -72,6 +72,22 @@ class _MenuView extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 0.0, top: 10.0, right: 0.0, bottom:0),
                   child: Center(
                     child: TextButton(
+                      onPressed: () => Navigator.pushNamed(context, '/map'),
+                      child: Text("bike map", style: TextStyle(fontSize: 27,
+                          fontWeight: FontWeight.w200, color: Colors.black),),
+                    ),
+                  ),
+                )
+            )
+          ],
+        ),
+        Row(
+          children: [
+            Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 0.0, top: 10.0, right: 0.0, bottom:0),
+                  child: Center(
+                    child: TextButton(
                       child: Text("settings", style: TextStyle(fontSize: 27,
                           fontWeight: FontWeight.w200, color: Colors.black),),
                     ),

@@ -1,3 +1,4 @@
+import 'package:course_work_2/MapBikeRoadsView.dart';
 import 'package:course_work_2/SignUpView.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -10,6 +11,7 @@ import 'AuthService.dart';
 import 'SignUpView.dart';
 import 'ProviderWidget.dart';
 import 'RidesListView.dart';
+import 'MapBikeRoadsView.dart';
 
 void main() {
   runApp(MyApp());
@@ -38,6 +40,7 @@ class MyApp extends StatelessWidget {
               '/signIn': (context) => SignUpView(
                 authFormType: AuthFormType.signIn,),
               '/ridesList': (context) => RidesList(),
+              '/map': (context) => MapBikeRoadsView(),
 
           //'/addContact': (context) => AddContact(),
         },
