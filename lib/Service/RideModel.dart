@@ -7,7 +7,7 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:geolocator/geolocator.dart';
 import 'AuthService.dart';
-import 'package:course_work_2/ProviderWidget.dart';
+import 'package:course_work_2/Service/ProviderWidget.dart';
 
 class Ride{
   final int id;

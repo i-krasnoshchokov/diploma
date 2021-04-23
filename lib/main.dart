@@ -1,17 +1,17 @@
-import 'package:course_work_2/MapBikeRoadsView.dart';
-import 'package:course_work_2/SignUpView.dart';
+import 'package:course_work_2/View/MapBikeRoadsView.dart';
+import 'package:course_work_2/View/SignUpView.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'RideModel.dart';
-import 'RideView.dart';
-import 'FirstView.dart';
-import 'MenuView.dart';
-import 'AuthService.dart';
-import 'SignUpView.dart';
-import 'ProviderWidget.dart';
-import 'RidesListView.dart';
-import 'MapBikeRoadsView.dart';
+import 'Service/RideModel.dart';
+import 'View/RideView.dart';
+import 'View/FirstView.dart';
+import 'View/MenuView.dart';
+import 'Service/AuthService.dart';
+import 'View/SignUpView.dart';
+import 'Service/ProviderWidget.dart';
+import 'View/RidesListView.dart';
+import 'View/MapBikeRoadsView.dart';
 
 void main() {
   runApp(MyApp());

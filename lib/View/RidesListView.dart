@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import 'package:course_work_2/ProviderWidget.dart';
+import 'package:course_work_2/Service/ProviderWidget.dart';
 
 class RidesList extends StatelessWidget {
   @override

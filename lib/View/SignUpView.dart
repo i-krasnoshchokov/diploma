@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'dart:ui';
-import 'ProviderWidget.dart';
+import '../Service/ProviderWidget.dart';
 
-import 'AuthService.dart';
+import '../Service/AuthService.dart';
 
 enum AuthFormType {
   signIn,

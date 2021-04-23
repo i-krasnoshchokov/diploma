@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'dart:ui';
 
-import 'package:course_work_2/ProviderWidget.dart';
-import 'AuthService.dart';
+import 'package:course_work_2/Service/ProviderWidget.dart';
+import '../Service/AuthService.dart';
 
 
 class Menu extends StatelessWidget {

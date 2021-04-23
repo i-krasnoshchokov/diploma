@@ -82,6 +82,26 @@ class _MapBikeRoadsViewState extends State<MapBikeRoadsView> {
     street2s6.add(LatLng(50.449611, 30.475211));
     street2s6.add(LatLng(50.448812, 30.479879));
 
+    //Gonchara
+    // ignore: deprecated_member_use
+    List<LatLng> street3 = List<LatLng>();
+    street3.add(LatLng(50.447053, 30.494278));
+    street3.add(LatLng(50.448614, 30.498089));
+    street3.add(LatLng(50.451197, 30.506234));
+    street3.add(LatLng(50.451635, 30.507523));
+    street3.add(LatLng(50.452126, 30.508542));
+
+
+    //Gonchara
+    // ignore: deprecated_member_use
+    List<LatLng> street4 = List<LatLng>();
+    street4.add(LatLng(50.447053, 30.494278));
+    street4.add(LatLng(50.448614, 30.498089));
+    street4.add(LatLng(50.451197, 30.506234));
+    street4.add(LatLng(50.451635, 30.507523));
+    street4.add(LatLng(50.452126, 30.508542));
+
+
 
     _polylines.add(
       Polyline(
@@ -135,6 +155,14 @@ class _MapBikeRoadsViewState extends State<MapBikeRoadsView> {
       Polyline(
         polylineId: PolylineId("2"),
         points: street2s6,
+        color: Colors.purple,
+        width: 3,
+      ),
+    );
+    _polylines.add(
+      Polyline(
+        polylineId: PolylineId("3"),
+        points: street3,
         color: Colors.purple,
         width: 3,
       ),

@@ -5,8 +5,8 @@ import 'package:provider/provider.dart';
 import 'dart:ui';
 import 'dart:async';
 
-import 'ProviderWidget.dart';
-import 'RideModel.dart';
+import '../Service/ProviderWidget.dart';
+import '../Service/RideModel.dart';
 
 
 class RideScreen extends StatelessWidget{
